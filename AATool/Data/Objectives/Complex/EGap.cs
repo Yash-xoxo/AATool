@@ -55,18 +55,20 @@ namespace AATool.Data.Objectives.Complex
             if (this.Looted)
                 return "Obtained";
 
-            return "God\0Apple";
+            return Config.Main.RenameToNotchApple ? "Notch\0Apple" : "God\0Apple";
         }
 
         protected override string GetLongStatus()
         {
+            string name = Config.Main.RenameToNotchApple ? "Notch" : "God";
+
             if (this.Eaten)
-                return "God\0Apple\nEaten";
+                return $"{name}\0Apple\nEaten";
 
             if (this.Looted || this.ManuallyChecked)
-                return "Obtained\nGod\0Apple";
+                return $"Obtained\n{name}\0Apple";
             
-            return "Obtain\nGod\0Apple";
+            return $"Obtain\n{name}\0Apple";
         }
 
         protected override string GetCurrentIcon()
