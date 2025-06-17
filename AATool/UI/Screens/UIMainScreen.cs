@@ -55,6 +55,8 @@ namespace AATool.UI.Screens
 
         private static readonly Utilities.Timer SettingsCooldown = new (0.25f);
 
+        public readonly ManualChecklistController checklist;
+
         private UIGrid grid;
         private UILobby lobby;
         private UIStatusBar status;
@@ -63,7 +65,6 @@ namespace AATool.UI.Screens
         private UIPotionGroup potions;
         private UITextBlock debugLog;
         private UIBlockGrid blockGrid;
-        private ManualChecklistController checklist;
 
         private UIControl complexOverworld;
         private UIControl complexNether;

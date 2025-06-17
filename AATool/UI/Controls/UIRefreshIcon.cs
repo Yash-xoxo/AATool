@@ -57,7 +57,7 @@ namespace AATool.UI.Controls
             {
                 if (Config.Tracking.ManualChecklistMode)
                 {
-                    PromptClearManualChecklist();
+                    this.PromptClearManualChecklist();
                 }
                 else if (Config.Tracking.UseSftp)
                 {
@@ -72,7 +72,7 @@ namespace AATool.UI.Controls
             }
         }
 
-        private static void PromptClearManualChecklist()
+        private void PromptClearManualChecklist()
         {
             System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show(
                 "You are about to clear all manually checked Advancements and sub-criteria. Are you sure?",
@@ -83,7 +83,7 @@ namespace AATool.UI.Controls
 
             if (result is System.Windows.Forms.DialogResult.OK)
             {
-                Tracker.ClearManualChecklist();
+                (this.Root() as UIMainScreen).checklist.Clear();
             }
         }
 

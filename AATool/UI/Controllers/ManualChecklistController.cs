@@ -241,5 +241,12 @@ namespace AATool.UI.Controllers
                 }
             }
         }
+
+        public void Clear()
+        {
+            this.checks.Clear();
+            this.Save();
+            Tracker.ManualChecklistInvalidated = true;
+        }
     }
 }

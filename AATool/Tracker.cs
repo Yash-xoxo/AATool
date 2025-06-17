@@ -655,10 +655,5 @@ namespace AATool
             Blocks.UpdateState(activeState);
             ComplexObjectives.UpdateState(activeState);
         }
-
-        public static void ClearManualChecklist()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
